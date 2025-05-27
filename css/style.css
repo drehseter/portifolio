@@ -279,7 +279,7 @@ header .logo:hover {
 }
 .btn-secondary:hover {
     background-color: var(--accent-color-glow);
-    color: var(--text-color);
+    color: var(--primary-color);
     border-color: var(--accent-color);
     box-shadow: 0 0 var(--glow-blur-radius) var(--accent-color-glow);
 }
