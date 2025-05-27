@@ -18,6 +18,16 @@
     --glow-blur-radius-hover: 12px;
     --header-height-desktop: 70px; /* Estimativa, ajuste se necessário */
 }
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+a:hover {
+    text-decoration: underline; /* Isso pode adicionar um sublinhado ao logo no hover */
+    color: #f3c558;
+    text-shadow: 0 0 5px rgba(218, 165, 32, 0.6);
+}
 
 /* Reset Básico e Estilos Globais */
 * {
@@ -197,7 +207,8 @@ header .logo:hover {
 
 /* Seção Home (Hero) */
 .hero {
-    background: linear-gradient(rgba(1, 46, 70, 0.85), rgba(1, 46, 70, 0.95)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    background: linear-gradient(rgba(1, 46, 70, 0.85), rgba(1, 46, 70, 0.95)), url('../src/bg-hero.png') no-repeat center center/cover;
+    /* Outras propriedades existentes do .hero */
     min-height: calc(100vh - var(--header-height-desktop));
     display: flex;
     align-items: center;
