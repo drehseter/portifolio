@@ -18,16 +18,7 @@
     --glow-blur-radius-hover: 12px;
     --header-height-desktop: 70px; /* Estimativa, ajuste se necessário */
 }
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-a:hover {
-    text-decoration: underline; /* Isso pode adicionar um sublinhado ao logo no hover */
-    color: #f3c558;
-    text-shadow: 0 0 5px rgba(218, 165, 32, 0.6);
-}
+
 
 /* Reset Básico e Estilos Globais */
 * {
