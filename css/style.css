@@ -28,6 +28,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height-desktop); /* <<< ADICIONADO PARA DESKTOP */
 }
 
 body {
@@ -605,6 +606,9 @@ footer p:last-child { font-style: italic; color: var(--accent-color); text-shado
 @media (max-width: 768px) {
     :root {
         --header-height-mobile: 60px; /* Altura do header no mobile */
+    }
+    html { /* <<< ADICIONADO PARA MOBILE */
+        scroll-padding-top: var(--header-height-mobile);
     }
     body {
         font-size: 15px;
