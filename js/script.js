@@ -15,22 +15,41 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Fundamentos de Suporte Técnico",
             issuer: "Google",
             date: "Jan 2024 - Fev 2024",
-            logoUrl: "", // Ex: "images/google-logo.png" ou deixe vazio para placeholder
-            description: "Certificado cobrindo os fundamentos essenciais do suporte técnico em TI, incluindo hardware, software, redes e segurança."
+            logoUrl: "src/logo-google.webp",
+            certificateLink: "https://www.coursera.org/account/accomplishments/certificate/XQAAPXNM36M4",
+            description: "Este certificado abrange os pilares do suporte técnico em TI, explorando **hardware, software, redes, sistemas operacionais e segurança da informação**. Foca na resolução de problemas e atendimento ao usuário."
         },
         {
             title: "Cybersecurity Essentials",
             issuer: "FIAP",
             date: "Mar 2024 - Abr 2024",
-            logoUrl: "", // Ex: "images/fiap-logo.png"
-            description: "Curso introdutório aos conceitos e práticas de cibersegurança, protegendo sistemas e dados."
+            logoUrl: "src/logo-fiap.png",
+            certificateLink: "https://on.fiap.com.br/local/nanocourses/gerar_certificado.php?chave=dd43da66b420eac1ee9596f42b5f92ba&action=view",
+            description: "Curso introdutório aos **conceitos fundamentais de cibersegurança**, incluindo proteção de dados, avaliação de riscos, defesa contra ameaças cibernéticas e princípios de segurança de redes."
         },
         {
-            title: "Python para Análise de Dados",
-            issuer: "Data Masters Academy",
-            date: "Mai 2024 - Jun 2024",
-            logoUrl: "", // Ex: "images/dma-logo.png"
-            description: "Foco em bibliotecas como Pandas, NumPy e Matplotlib para manipulação e visualização de dados."
+            title: "Python Essentials 1",
+            issuer: "Cisco",
+            date: "September 2023",
+            logoUrl: "src/logo-cisco.png",
+            certificateLink: "https://www.credly.com/badges/55bce22f-0316-4f71-9255-e88bc2fc7b73/linked_in_profile",
+            description: "Focado no uso Básico do Python"
+        },
+        {
+            title: "IMPLEMENTANDO BANCO DE DADOS",
+            issuer: "Bradesco",
+            date: "Fev 2024",
+            logoUrl: "src/logo-bradesco.png",
+            certificateLink: "src/Certificado_Bradesco_BC.pdf",
+            description: "Este curso ensina os fundamentos da **implementação de bancos de dados**, cobrindo a estruturação, manipulação e consulta de dados, essencial para sistemas de informação."
+        },
+        {
+            title: "MICROSOFT EXCEL 2016 - BÁSICO",
+            issuer: "Bradesco",
+            date: "Mar 2025",
+            logoUrl: "src/logo-bradesco.png",
+            certificateLink: "src/Certificado_Bradesco_Excel.pdf",
+            description: "Certificado em **Microsoft Excel 2016 Básico**, cobrindo a criação e edição de planilhas, uso de fórmulas e funções básicas, formatação de dados e organização para análise."
         }
         // Adicione mais certificados aqui
     ];
@@ -52,17 +71,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         const cert = certificatesData[index];
         let logoHtml = '';
+        let certificateLinkHtml = '';
+
         if (cert.logoUrl && cert.logoUrl.trim() !== "" && !cert.logoUrl.includes("path/to/your/")) {
             logoHtml = `<img src="${cert.logoUrl}" alt="Logo ${cert.issuer}" class="certificate-logo">`;
         } else {
             logoHtml = `<div class="certificate-logo-placeholder">Logo Indisponível</div>`;
         }
+
+        if (cert.certificateLink && cert.certificateLink.trim() !== "") {
+            certificateLinkHtml = `<p><a href="${cert.certificateLink}" target="_blank" rel="noopener noreferrer" class="certificate-link">Ver Certificado Completo (PDF)</a></p>`;
+        }
+
+
         certificateDisplay.innerHTML = `
             ${logoHtml}
             <h3>${cert.title}</h3>
             <p><strong>Emitido por:</strong> ${cert.issuer}</p>
             <p><strong>Data:</strong> ${cert.date}</p>
             ${cert.description ? `<p class="description">${cert.description}</p>` : ''}
+            ${certificateLinkHtml}
         `;
         if (pageInfo) pageInfo.textContent = `${index + 1}/${certificatesData.length}`;
         if (prevButton) prevButton.disabled = index === 0;

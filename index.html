@@ -22,6 +22,8 @@
     <meta name="twitter:title" content="André Arruda Seter - Portfólio | Estágio em Dados">
     <meta name="twitter:description"
         content="Portfólio de André Arruda Seter, buscando estágio em Dados. Habilidades em Python, SQL, Power BI.">
+    <link rel="shortcut icon" href="src/logo-fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +36,8 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">André Arruda Seter</div>
+            <img src="src/logo-fav.png" alt="Logo do website" class="logo-pic">
+            <div class="logo" >André Arruda Seter</div>
             <button class="hamburger-button" aria-label="Abrir menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -55,7 +58,7 @@
         <section id="home" class="hero">
             <div class="container hero-content">
                 <div class="profile-pic-container">
-                    <div class="profile-pic-placeholder"> 
+                    <div class="profile-pic-placeholder">
                         <img src="src/foto.png" alt="Foto de André Arruda Seter" class="profile-pic">
                     </div>
                 </div>
@@ -80,17 +83,14 @@
                 <h2>Certificados</h2>
                 <div class="certificates-carousel">
                     <div id="certificate-display" class="certificate-card-display">
-                        </div>
+                    </div>
                     <div class="pagination-controls">
                         <button id="prev-certificate" class="pagination-btn">&laquo; Anterior</button>
                         <span id="page-info"></span>
                         <button id="next-certificate" class="pagination-btn">Próximo &raquo;</button>
                     </div>
                 </div>
-                <div class="certificate-instructions">
-                    <p><strong>Para adicionar novos certificados:</strong> Edite o array `certificatesData` no arquivo
-                        `script.js`.</p>
-                </div>
+
             </div>
         </section>
 
@@ -157,14 +157,34 @@
                         <p>Prefere um contato mais direto ou quer se conectar em outras plataformas? Aqui estão minhas
                             informações:</p>
                         <ul class="contact-list">
-                            <li><strong>Email:</strong> <a
-                                    href="mailto:andre.arruda.seter@gmail.com">andre.arruda.seter@gmail.com</a></li>
-                            <li><strong>Telefone:</strong> <a href="tel:+5513988748498">+55 13 98874-8498</a></li>
-                            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/andre-arruda-seter"
-                                    target="_blank">linkedin.com/in/andre-arruda-seter</a></li>
-                            <li><strong>GitHub:</strong> <a href="https://github.com/drehseter"
-                                    target="_blank">github.com/drehseter</a></li>
-                            <li><strong>Localização:</strong> Osasco, São Paulo, Brasil</li>
+                            <li>
+                                <strong>Email:</strong> 
+                                <a href="mailto:andre.arruda.seter@gmail.com">
+                                    <i class="fas fa-envelope"></i> andre.arruda.seter@gmail.com
+                                </a>
+                            </li>
+                            <li>
+                                <strong>Telefone:</strong> 
+                                <a href="https://wa.me/5513988748498" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i> +55 13 98874-8498
+                                </a>
+                            </li>
+                            <li>
+                                <strong>LinkedIn:</strong> 
+                                <a href="https://linkedin.com/in/andre-arruda-seter" target="_blank">
+                                    <i class="fab fa-linkedin"></i> linkedin.com/in/andre-arruda-seter
+                                </a>
+                            </li>
+                            <li>
+                                <strong>GitHub:</strong> 
+                                <a href="https://github.com/drehseter" target="_blank">
+                                    <i class="fab fa-github"></i> github.com/drehseter
+                                </a>
+                            </li>
+                            <li>
+                                <strong>Localização:</strong> 
+                                <i class="fas fa-map-marker-alt"></i> Osasco, São Paulo, Brasil
+                            </li>
                         </ul>
                     </div>
                     <div class="contact-form-wrapper">
