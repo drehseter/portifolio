@@ -16,7 +16,13 @@
 
     --glow-blur-radius: 8px;
     --glow-blur-radius-hover: 12px;
-    --header-height-desktop: 70px; /* Estimativa, ajuste se necessário */
+    /*
+      IMPORTANTE: VERIFIQUE E AJUSTE ESTES VALORES!
+      Meça a altura real do seu cabeçalho no desktop e no mobile
+      e atualize estas variáveis para que correspondam.
+    */
+    --header-height-desktop: 70px;
+    --header-height-mobile: 60px;
 }
 
 
@@ -29,7 +35,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--header-height-desktop); /* <<< ADICIONADO PARA DESKTOP */
+    scroll-padding-top: var(--header-height-desktop); /* COMPENSA O CABEÇALHO FIXO PARA ÂNCORAS */
 }
 
 body {
@@ -38,7 +44,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
-    padding-top: var(--header-height-desktop); /* Espaço para o header fixo */
+    padding-top: var(--header-height-desktop); /* ESPAÇO NO TOPO DO BODY PARA O CABEÇALHO FIXO NO CARREGAMENTO INICIAL */
 }
 
 .container {
@@ -64,7 +70,7 @@ h1:hover, h2:hover, h3:hover {
 }
 
 h1 { font-size: 2.8rem; line-height: 1.2; }
-h2 { font-size: 2.2rem; text-align: center; padding-top: 2rem; margin-bottom: 2rem; }
+h2 { font-size: 2.2rem; text-align: center; padding-top: 2rem; margin-bottom: 2rem; } /* padding-top aqui é para o H2 em si */
 h3 { font-size: 1.5rem; }
 p { margin-bottom: 1rem; }
 
@@ -87,7 +93,7 @@ section:last-of-type { border-bottom: none; }
 header {
     background-color: rgba(1, 46, 70, 0.95);
     backdrop-filter: blur(5px);
-    padding: 0.8rem 0; /* Padding vertical ajustado */
+    padding: 0.8rem 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -95,7 +101,7 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     transition: background-color 0.3s ease;
-    height: var(--header-height-desktop); /* Altura definida */
+    height: var(--header-height-desktop); /* USA A VARIÁVEL PARA ALTURA */
     display: flex;
     align-items: center;
 }
@@ -103,18 +109,18 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Para ocupar toda a largura dentro do padding do header */
+    width: 100%;
 }
 
 .logo-pic {
-    width: 50px;  /* <<< LARGURA AJUSTADA AQUI */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-right: 10px; /* Espaço entre a imagem e o texto do logo */
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
     transition: transform 0.3s ease;
 }
 
 .logo-pic:hover {
-    transform: scale(1.1); /* Efeito opcional de zoom no hover */
+    transform: scale(1.1);
 }
 
 header .logo {
@@ -167,13 +173,13 @@ header .logo:hover {
 
 /* Botão Hambúrguer */
 .hamburger-button {
-    display: none; /* Oculto por padrão, visível apenas no mobile */
+    display: none;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 10px;
     z-index: 1002;
-    margin-left: auto; /* Para alinhar à direita se necessário */
+    margin-left: auto;
 }
 .hamburger-line {
     display: block;
@@ -184,7 +190,6 @@ header .logo:hover {
     transition: all 0.3s ease-in-out;
     border-radius: 2px;
 }
-/* Animação do botão para "X" quando ativo */
 .hamburger-button.active .hamburger-line:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -199,18 +204,17 @@ header .logo:hover {
 /* Seção Home (Hero) */
 .hero {
     background: linear-gradient(rgba(1, 46, 70, 0.85), rgba(1, 46, 70, 0.95)), url('../src/bg-hero.png') no-repeat center center/cover;
-    /* Outras propriedades existentes do .hero */
-    min-height: calc(100vh - var(--header-height-desktop));
+    min-height: calc(100vh - var(--header-height-desktop)); /* Considera a altura do header para o viewport */
     display: flex;
     align-items: center;
     text-align: left;
 }
 .hero-content { display: flex; align-items: center; gap: 40px; }
 .profile-pic-container { flex-shrink: 0; }
-.profile-pic-placeholder { /* Usado como container da imagem */
+.profile-pic-placeholder {
     width: 220px;
     height: 220px;
-    background-color: var(--accent-color); /* Fundo se a imagem for PNG transparente */
+    background-color: var(--accent-color);
     border-radius: 50%;
     border: 6px solid var(--accent-color);
     box-shadow: 0 0 15px var(--accent-color-glow), 0 0 25px rgba(218, 165, 32, 0.4), 0 5px 10px rgba(0,0,0,0.3);
@@ -218,17 +222,17 @@ header .logo:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Para cortar a imagem em círculo */
+    overflow: hidden;
 }
 .profile-pic-placeholder:hover {
     transform: scale(1.05) rotate(2deg);
     box-shadow: 0 0 20px var(--accent-color-glow), 0 0 35px rgba(218, 165, 32, 0.6), 0 8px 15px rgba(0,0,0,0.4);
 }
-.profile-pic { /* A tag <img> da foto */
+.profile-pic {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%; /* Garante que a imagem seja redonda mesmo que não seja quadrada */
+    border-radius: 50%;
 }
 .hero-text { max-width: 700px; }
 .hero-text h1 { color: var(--accent-color); margin-bottom: 0.5rem; }
@@ -283,7 +287,6 @@ header .logo:hover {
     border-color: var(--accent-color);
     box-shadow: 0 0 var(--glow-blur-radius) var(--accent-color-glow);
 }
-/* ... outros estilos de botão se houver ... */
 
 /* Seção Certificados */
 #certificates {
@@ -314,13 +317,12 @@ header .logo:hover {
     margin-bottom: 20px;
     border-radius: 6px;
     padding: 8px;
-    /* Linha removida: background-color: #ffffff; */
-    border: 1px solid transparent; /* Alterado para transparente para remover a borda amarela */
+    border: 1px solid transparent;
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
-.certificate-card-display .certificate-logo-placeholder { /* Estilo para o placeholder de logo */
-    width: 180px; /* Ou ajuste conforme necessário */
-    height: 120px; /* Ou ajuste conforme necessário */
+.certificate-card-display .certificate-logo-placeholder {
+    width: 180px;
+    height: 120px;
     background-color: #e0e0e0;
     border: 2px dashed var(--accent-color);
     display: flex;
@@ -338,8 +340,7 @@ header .logo:hover {
 .certificate-card-display p strong { color: var(--accent-color); }
 .certificate-card-display p.description { font-size: 0.9rem; color: #bdbdbd; margin-top: 10px; font-style: italic; }
 
-/* Estilo para o botão "Ver Certificado Completo (PDF)" */
-.certificate-card-display .button-link { /* NOTE: A classe no HTML é certificate-link, não button-link. Mantendo como no HTML original. */
+.certificate-card-display .certificate-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -359,8 +360,7 @@ header .logo:hover {
     margin-top: 15px;
 }
 
-.certificate-card-display .certificate-link:hover, /* Ajustado para certificate-link */
-.certificate-card-display .button-link:hover { /* Mantendo button-link caso seja usado em outro lugar ou futuro */
+.certificate-card-display .certificate-link:hover {
     background-color: #c8941a;
     color: var(--primary-color);
     text-decoration: none;
@@ -370,13 +370,13 @@ header .logo:hover {
                  0 3px 7px rgba(0,0,0,0.25);
 }
 
-.pagination-controls {
+.pagination-controls { /* Para certificados */
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
 }
-.pagination-btn {
+.pagination-btn { /* Estilo base para todos os botões de paginação */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -403,20 +403,21 @@ header .logo:hover {
                  0 0 var(--glow-blur-radius-hover) var(--accent-color-glow),
                  0 3px 7px rgba(0,0,0,0.25);
 }
-.pagination-btn:disabled {
-    background-color: #525f71;
-    color: #8898aa;
+.pagination-btn:disabled { /* Estilo para botões desabilitados em AMBAS paginações */
+    background-color: #525f71 !important; /* Usar !important se necessário para sobrescrever */
+    color: #8898aa !important;
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
     border-color: transparent;
 }
-#page-info {
+#page-info { /* Para paginação de certificados */
     font-family: var(--font-secondary);
     font-weight: bold;
     color: var(--accent-color);
     text-shadow: 0 0 5px var(--accent-color-glow);
     font-size: 1rem;
+    margin: 0 10px; /* Adicionado margem para não colar nos botões */
 }
 .certificate-instructions {
     margin-top: 30px;
@@ -463,6 +464,153 @@ header .logo:hover {
     box-shadow: 0 0 15px var(--accent-color-glow), 0 3px 8px rgba(0,0,0,0.3);
     color: var(--primary-color);
 }
+
+/* Seção Projetos */
+#projects {
+    background-color: var(--background-light);
+    padding-bottom: 80px;
+}
+
+#projects h2 {
+    margin-bottom: 2.5rem;
+}
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--accent-color-glow);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 5px rgba(218, 165, 32, 0.3);
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-color-glow);
+    color: var(--dark-text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(218, 165, 32, 0.5);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-color);
+    color: var(--dark-text-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 8px rgba(218, 165, 32, 0.6);
+    transform: translateY(0);
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    min-height: 300px;
+}
+
+.project-item {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+.project-item.hide {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+
+.project-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-color-glow);
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.project-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+    text-shadow: none;
+}
+.project-info h3:hover{
+     color: #f3c558;
+     text-shadow: 0 0 var(--glow-blur-radius-hover) var(--accent-color-glow);
+}
+
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #dcdcdc;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.project-tags {
+    font-size: 0.8rem;
+    color: var(--accent-color-glow);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.project-info .btn.btn-small {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Estilos para Paginação de Projetos */
+.project-pagination-controls {
+    display: flex;
+    justify-content: space-around; /* AJUSTADO para melhor espaçamento */
+    align-items: center;
+    margin-top: 30px;
+    padding: 10px;
+    border-top: 1px solid var(--background-light);
+}
+
+/* .project-pagination-controls .pagination-btn -> herda de .pagination-btn */
+/* .project-pagination-controls .pagination-btn:disabled -> herda de .pagination-btn:disabled */
+
+.project-page-info {
+    font-family: var(--font-secondary);
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-color-glow);
+    font-size: 1rem;
+    margin: 0 15px; /* Mantém margem para não colar nos botões */
+}
+
 
 /* Seção Contato */
 #contact h2 { margin-bottom: 2.5rem; }
@@ -570,8 +718,8 @@ header .logo:hover {
     text-align: center;
     padding: 12px;
     border-radius: 6px;
-    display: none; /* Escondido por padrão, revelado via JS */
-    transition: opacity 0.3s ease; /* Para suavizar o aparecimento/desaparecimento */
+    display: none;
+    transition: opacity 0.3s ease;
 }
 #contact-form-status.success {
     background-color: rgba(40, 167, 69, 0.25);
@@ -597,6 +745,7 @@ footer {
 footer p { margin-bottom: 0.5rem; font-size: 0.9rem; color: #c0c0c0; }
 footer p:last-child { font-style: italic; color: var(--accent-color); text-shadow: 0 0 5px var(--accent-color-glow); font-weight: 500; }
 
+
 /* Responsividade */
 @media (max-width: 992px) {
     .hero-content { gap: 30px; }
@@ -606,44 +755,41 @@ footer p:last-child { font-style: italic; color: var(--accent-color); text-shado
 }
 
 @media (max-width: 768px) {
-    :root {
-        --header-height-mobile: 60px; /* Altura do header no mobile */
-    }
-    html { /* <<< ADICIONADO PARA MOBILE */
-        scroll-padding-top: var(--header-height-mobile);
+    /* :root { --header-height-mobile já está definido no topo } */
+    html {
+        scroll-padding-top: var(--header-height-mobile); /* COMPENSA O CABEÇALHO FIXO PARA ÂNCORAS NO MOBILE */
     }
     body {
         font-size: 15px;
-        padding-top: var(--header-height-mobile); /* Espaço para o header fixo no mobile */
+        padding-top: var(--header-height-mobile); /* ESPAÇO NO TOPO DO BODY NO MOBILE */
     }
     header {
-        height: var(--header-height-mobile);
-        padding: 0.5rem 0; /* Padding vertical menor no mobile */
+        height: var(--header-height-mobile); /* USA A VARIÁVEL PARA ALTURA NO MOBILE */
+        padding: 0.5rem 0;
     }
     header .container {
-        flex-direction: row; /* Logo e hambúrguer na mesma linha */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
-    header .logo { font-size: 1.6rem; } /* Logo um pouco menor */
+    header .logo { font-size: 1.6rem; }
     .logo-pic {
-        width: 40px; /* Ajuste o tamanho do logo para mobile se necessário */
+        width: 40px;
         margin-right: 8px;
     }
 
     .hamburger-button {
-        display: block; /* Mostra o botão hambúrguer */
+        display: block;
     }
 
-    /* Navegação Mobile (Dropdown) */
     .main-navigation .nav-links {
-        display: none; /* Escondido por padrão */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: var(--header-height-mobile); /* Começa logo abaixo do header */
+        top: var(--header-height-mobile);
         left: 0;
         width: 100%;
-        background-color: rgba(1, 46, 70, 0.99); /* Fundo escuro quase opaco */
+        background-color: rgba(1, 46, 70, 0.99);
         padding-top: 0.5rem;
         padding-bottom: 1rem;
         box-shadow: 0 8px 16px rgba(0,0,0,0.3);
@@ -651,21 +797,21 @@ footer p:last-child { font-style: italic; color: var(--accent-color); text-shado
         z-index: 1001;
     }
     .main-navigation .nav-links.nav-active {
-        display: flex; /* Mostra quando ativo */
+        display: flex;
     }
     .main-navigation .nav-links li {
         margin: 0;
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid var(--background-light); /* Linha divisória entre itens */
+        border-bottom: 1px solid var(--background-light);
     }
     .main-navigation .nav-links li:last-child {
-        border-bottom: none; /* Remove borda do último item */
+        border-bottom: none;
     }
     .main-navigation .nav-links li a {
         display: block;
-        padding: 0.9rem 1rem; /* Padding ajustado */
-        font-size: 1rem; /* Tamanho de fonte ajustado */
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
         color: var(--text-color);
         text-decoration: none;
         transition: background-color 0.3s ease, color 0.3s ease;
@@ -675,7 +821,7 @@ footer p:last-child { font-style: italic; color: var(--accent-color); text-shado
         color: var(--dark-text-color);
     }
     .main-navigation .nav-links li a::after {
-        display: none; /* Remove sublinhado do desktop */
+        display: none;
     }
 
     h1 { font-size: 2rem; }
@@ -689,7 +835,7 @@ footer p:last-child { font-style: italic; color: var(--accent-color); text-shado
     h1,h2,h3 { text-shadow: 0 0 calc(var(--glow-blur-radius) - 2px) var(--accent-color-glow); }
 
     .hero {
-        min-height: calc(100vh - var(--header-height-mobile));
+        min-height: calc(100vh - var(--header-height-mobile)); /* Considera altura do header mobile */
     }
     .hero-content { flex-direction: column; text-align: center; gap: 25px; }
     .hero-text h2 { text-align: center; }
@@ -701,15 +847,20 @@ footer p:last-child { font-style: italic; color: var(--accent-color); text-shado
     .certificate-card-display h3 { font-size: 1.25rem; }
     .certificate-card-display img.certificate-logo,
     .certificate-card-display .certificate-logo-placeholder { max-height: 140px; }
-    .pagination-controls { flex-direction: column; gap: 12px; }
-    .pagination-btn { padding: 12px 20px; width: 100%; max-width: 240px; }
-    #page-info { font-size: 0.95rem; margin: 5px 0; }
+    .pagination-controls { /* Para certificados */
+        flex-direction: row; /* Mantém lado a lado se couber */
+        gap: 10px;
+    }
+    .pagination-controls .pagination-btn { /* Para certificados */
+        padding: 10px 15px;
+        width: auto; /* Não ocupa 100% */
+        max-width: 150px;
+    }
+    #page-info { font-size: 0.95rem; margin: 0 5px; }
 
-    /* Opcional: Para mobile, fazer o botão ocupar a largura total no carrossel */
-    .certificate-card-display .certificate-link, /* Ajustado para certificate-link */
-    .certificate-card-display .button-link {
-        width: 90%; /* Ocupa a maior parte da largura no mobile */
-        max-width: 280px; /* Limita o tamanho máximo */
+    .certificate-card-display .certificate-link {
+        width: 90%;
+        max-width: 280px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -726,6 +877,29 @@ footer p:last-child { font-style: italic; color: var(--accent-color); text-shado
     .contact-list li strong { min-width: auto; }
     .form-submit-group { text-align: center; }
     .form-submit-group .btn { width: 100%; max-width: 300px; }
+
+    /* Paginação de Projetos Responsivo */
+    .project-filters {
+        gap: 10px;
+    }
+    .filter-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+    .project-gallery {
+        grid-template-columns: 1fr; /* Uma coluna para projetos no mobile */
+        gap: 25px;
+        min-height: auto; /* Remove altura mínima no mobile se não for necessário */
+    }
+    .project-item:hover {
+        transform: translateY(-5px);
+    }
+    .project-pagination-controls .pagination-btn { /* Para projetos */
+        padding: 10px 15px; /* Botões de paginação um pouco menores no mobile */
+    }
+    .project-page-info {
+        font-size: 0.9rem; /* Informação de página um pouco menor */
+    }
 }
 
 @media (max-width: 480px) {
@@ -734,16 +908,19 @@ footer p:last-child { font-style: italic; color: var(--accent-color); text-shado
     h3 { font-size: 1.2rem; }
     #about .about-section h3,
     .contact-details h3,
-    .contact-form-wrapper h3 {
+    .contact-form-wrapper h3,
+    #projects h2
+     {
         font-size: 1.4rem;
     }
     .logo-pic {
-        width: 35px; /* Ajuste fino para telas menores */
+        width: 35px;
     }
 
     .hero-text p { font-size: 0.95rem; }
-    .btn, .pagination-btn { padding: 12px 22px; font-size: 0.9rem; }
-    .pagination-btn { max-width: 200px; }
+    /* .btn, .pagination-btn geral já definidos */
+    #certificates .pagination-controls .pagination-btn { max-width: 180px; } /* Ajuste se necessário */
+
 
     .profile-pic-placeholder { width: 130px; height: 130px; border-width: 4px;}
 
@@ -755,5 +932,28 @@ footer p:last-child { font-style: italic; color: var(--accent-color); text-shado
     }
     .form-group label {
         font-size: 0.9rem;
+    }
+
+    .filter-btn {
+        width: calc(50% - 10px);
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 0.85rem;
+        padding: 10px 15px;
+    }
+    .project-filters {
+        justify-content: space-around;
+    }
+
+    /* Paginação de Projetos e Certificados em telas muito pequenas */
+    .pagination-controls,
+    .project-pagination-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .pagination-controls .pagination-btn, /* Para certificados */
+    .project-pagination-controls .pagination-btn { /* Para projetos */
+        width: 100%;
+        max-width: 220px;
     }
 }
