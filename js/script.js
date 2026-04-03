@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "Este certificado abrange os pilares do suporte técnico em TI, explorando **hardware, software, redes, sistemas operacionais e segurança da informação**. Foca na resolução de problemas e atendimento ao usuário."
         },
         {
+            title: "App Building with AppSheet Skill Badge",
+            issuer: "Google",
+            date: "February 2025",
+            logoUrl: "src/logo-google.webp",
+            certificateLink: "https://www.credly.com/badges/68485a18-0247-4de3-bfe4-49ee88abe3d5/linked_in_profile",
+            description: "Este certificado abrange os pilares do suporte técnico em TI, explorando **hardware, software, redes, sistemas operacionais e segurança da informação**. Foca na resolução de problemas e atendimento ao usuário."
+        },
+        {
             title: "Cybersecurity Essentials",
             issuer: "FIAP",
             date: "Mar 2024 - Abr 2024",
@@ -34,6 +42,14 @@ document.addEventListener('DOMContentLoaded', function() {
             logoUrl: "src/logo-cisco.png",
             certificateLink: "https://www.credly.com/badges/55bce22f-0316-4f71-9255-e88bc2fc7b73/linked_in_profile",
             description: "Focado no uso Básico do Python"
+        },
+        {
+            title: "CCNA 1",
+            issuer: "Cisco",
+            date: "February 2025",
+            logoUrl: "src/logo-cisco.png",
+            certificateLink: "https://www.credly.com/badges/ba2e2cd2-4484-4f8d-b07e-162871fe6e51/linked_in_profile",
+            description: "Focado no conhecimento de Redes para Computadores"
         },
         {
             title: "IMPLEMENTANDO BANCO DE DADOS",
