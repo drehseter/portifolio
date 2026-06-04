@@ -24,11 +24,9 @@ Este projeto foi construído utilizando as seguintes tecnologias:
   * CSS3
   * JavaScript
   ** **Backend:** (Se aplicável, ex: para formulário de contato)
-  * *(Adicione aqui, ex: Node.js, Python com Flask/Django, PHP)*
 * **Ferramentas de Desenvolvimento:**
   * Git & GitHub
   * VS Code
-  * *(Outras ferramentas, ex: npm, yarn, Webpack, Figma, Gulp)*
 * **Hospedagem:**
   * GitHub Pages
 
