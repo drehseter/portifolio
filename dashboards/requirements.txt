@@ -1,0 +1,10 @@
+dash
+pandas
+faker
+scikit-learn
+pillow
+python-dotenv
+plotly
+numpy
+requests
+yfinance

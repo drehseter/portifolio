@@ -1,0 +1,73 @@
+/* Estilos Injetados Automaticamente pelo Dash */
+
+/* Botão de Fechar animado */
+.back-btn {
+    background-color: transparent;
+    color: #f1f5f9;
+    border: 1px solid #d4af37;
+    padding: 12px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.back-btn:hover {
+    background-color: #d4af37;
+    color: #0b1325; /* Texto escuro ao fazer hover para contraste */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Responsividade dos Gráficos */
+.graph-container {
+    background-color: #131d36;
+    padding: 20px;
+    border-radius: 12px;
+    width: 45%;
+    min-width: 400px;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.graph-container:hover {
+    transform: translateY(-5px);
+}
+
+.graph-wrapper-large {
+    background-color: #131d36;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.graph-wrapper-large:hover {
+    transform: translateY(-5px);
+}
+
+/* Media Queries para Mobile */
+@media (max-width: 992px) {
+    .graph-container {
+        width: 90%;
+        min-width: unset;
+    }
+    
+    .graph-wrapper-large {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    .graph-container, .graph-wrapper-large {
+        padding: 10px;
+        width: 98%;
+    }
+    
+    h1 {
+        font-size: 1.5rem !important;
+    }
+}

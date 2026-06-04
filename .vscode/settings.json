@@ -1,0 +1,7 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/dashboards/venv/bin/python",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/dashboards/venv/lib/python3.14/site-packages"
+    ],
+    "liveServer.settings.port": 5501
+}
