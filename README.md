@@ -3,7 +3,6 @@
 Bem-vindo ao repositório do meu portfólio pessoal! Este projeto foi desenvolvido para mostrar minhas habilidades, projetos e um pouco sobre mim.
 
 ✨ [https://drehseter.github.io/portifolio/](https://drehseter.github.io/portifolio/) ✨
-*(Lembre-se de verificar se este é o link correto após o deploy no GitHub Pages, ou substitua pelo seu domínio customizado se tiver um)*
 
 ## 📚 Sobre
 
@@ -32,7 +31,6 @@ Este projeto foi construído utilizando as seguintes tecnologias:
   * *(Outras ferramentas, ex: npm, yarn, Webpack, Figma, Gulp)*
 * **Hospedagem:**
   * GitHub Pages
-  * *(Se usou outro, mencione aqui, ex: Netlify, Vercel)*
 
 ## ✨ Funcionalidades Principais
 
@@ -41,7 +39,6 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 * 📄 **Currículo:** Link para download do meu currículo atualizado (se aplicável).
 * 📞 **Links de Contato:** Maneiras fáceis de entrar em contato.
 * 📱 **Design Responsivo:** Adaptável a diferentes tamanhos de tela.
-* *(Adicione outras funcionalidades específicas do seu portfólio)*
 
 ## 🛠️ Como Rodar o Projeto Localmente (Opcional)
 
